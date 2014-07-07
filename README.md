@@ -6,7 +6,7 @@ generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. 
 
 ### $.genJsonpGDU("<Your-spreadsheet-key-here>")
 
-When you open your Google Spreadsheet, URL is like `https://docs.google.com/spreadsheets/d/**Your-spreadsheet-key**/edit#gid=0`. Please put your spreadsheet key following the syntax below.
+When you open your Google Spreadsheet, URL is like `https://docs.google.com/spreadsheets/d/[ Your spreadsheet key ]/edit#gid=0`. Please put your spreadsheet key following the syntax below.
 ```javascript
 var mySheet = $.genJsonpGDU("<Your-spreadsheet-key-here>");
 ```
@@ -25,16 +25,9 @@ mySheet.pager({
 });
 ```
 Please compare the syntax above and the table below. Following syntax means the range of the first page is the pink area, 2nd page is the green area. "B2:G2" is a first record. "B6:G6" is a fifth record.
-<style>
-.generateGoogleJsonpUri_table{border-style:solid;border-width:1px 0px 0px 1px;border-color:#888;background-color:#fafafa;}
-.generateGoogleJsonpUri_table tr{ margin:0px;padding:0px; }
-.generateGoogleJsonpUri_table td{padding:0px;text-align:center;border-style:solid;border-width:0px 1px 1px 0px;border-color:#888;}
-.generateGoogleJsonpUri_cells_range_01{ background-color:pink;}
-.generateGoogleJsonpUri_cells_range_02{ background-color:lightgreen;}
-</style>
 <table class="generateGoogleJsonpUri_table"><tbody>
 <tr><td>A1</td><td>B1</td><td>C1</td><td>D1</td><td>E1</td><td>F1</td><td>G1</td><td>H1</td></tr>
-<tr><td>A2</td><td class="generateGoogleJsonpUri_cells_range_01">B2</td><td class="generateGoogleJsonpUri_cells_range_01">C2</td><td class="generateGoogleJsonpUri_cells_range_01">D2</td><td class="generateGoogleJsonpUri_cells_range_01">E2</td><td class="generateGoogleJsonpUri_cells_range_01">F2</td><td class="generateGoogleJsonpUri_cells_range_01">G2</td><td>H2</td></tr>
+<tr><td>A2</td><td style="background-color:pink;">B2</td><td class="generateGoogleJsonpUri_cells_range_01">C2</td><td class="generateGoogleJsonpUri_cells_range_01">D2</td><td class="generateGoogleJsonpUri_cells_range_01">E2</td><td class="generateGoogleJsonpUri_cells_range_01">F2</td><td class="generateGoogleJsonpUri_cells_range_01">G2</td><td>H2</td></tr>
 <tr><td>A3</td><td class="generateGoogleJsonpUri_cells_range_01">B3</td><td class="generateGoogleJsonpUri_cells_range_01">C3</td><td class="generateGoogleJsonpUri_cells_range_01">D3</td><td class="generateGoogleJsonpUri_cells_range_01">E3</td><td class="generateGoogleJsonpUri_cells_range_01">F3</td><td class="generateGoogleJsonpUri_cells_range_01">G3</td><td>H3</td></tr>
 <tr><td>A4</td><td class="generateGoogleJsonpUri_cells_range_01">B4</td><td class="generateGoogleJsonpUri_cells_range_01">C4</td><td class="generateGoogleJsonpUri_cells_range_01">D4</td><td class="generateGoogleJsonpUri_cells_range_01">E4</td><td class="generateGoogleJsonpUri_cells_range_01">F4</td><td class="generateGoogleJsonpUri_cells_range_01">G4</td><td>H4</td></tr>
 <tr><td>A5</td><td class="generateGoogleJsonpUri_cells_range_01">B5</td><td class="generateGoogleJsonpUri_cells_range_01">C5</td><td class="generateGoogleJsonpUri_cells_range_01">D5</td><td class="generateGoogleJsonpUri_cells_range_01">E5</td><td class="generateGoogleJsonpUri_cells_range_01">F5</td><td class="generateGoogleJsonpUri_cells_range_01">G5</td><td>H5</td></tr>
