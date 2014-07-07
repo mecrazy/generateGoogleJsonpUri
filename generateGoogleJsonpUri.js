@@ -107,7 +107,13 @@
             },
             //Set parameters
             set:function(params){
+                var cacheBefore = setting.cache;
                 setting = $.extend(true,setting,params); //Merge objects
+                if(cacheBefore != setting.cache){
+                    //When cache enabled, launch timer function to check update date.
+                    //When cache disabled, stop timer function.
+                    cacheCheckerFunc();
+                }
                 return true;
             },
             //Get parameters
@@ -191,32 +197,44 @@
         };
 
         //Launch check function execute every interval
-        var htmlObj = $('html');
-        var customClass = 'gen-jsonp-gdu-' + spreadsheetKey;
-        if(!htmlObj.hasClass(customClass)){
-            htmlObj.addClass(customClass);
-            var seconds = setting.cacheInterval.sec;
-            seconds += ( setting.cacheInterval.min * 60 );
-            seconds += ( setting.cacheInterval.hour * 60 * 60 );
-            loopFunc(seconds,function(){
-                object.ajax({
-                    url:tempUrl,
-                    success:function(json){
-                        //Check the updated time of newest data
-                        var update = false;
-                        for(var t=0;t<cacheObj.time.length;t++){
-                            if(cacheObj.time[t] != json.feed.updated.$t){
-                                update = true;
-                                t = cacheObj.time.length;
+        function cacheCheckerFunc(){
+            var htmlObj = $('html');
+            var customClass = 'gen-jsonp-gdu-' + spreadsheetKey;
+
+            //When cache disabled.
+            if( (htmlObj.hasClass(customClass)) && (!setting.cache) ){
+                htmlObj.removeClass(customClass);
+            }
+
+            //When cache enabled.
+            if( (!htmlObj.hasClass(customClass)) && (setting.cache) ){
+                htmlObj.addClass(customClass);
+                var seconds = setting.cacheInterval.sec;
+                seconds += ( setting.cacheInterval.min * 60 );
+                seconds += ( setting.cacheInterval.hour * 60 * 60 );
+                //Get only one cell to check update date.
+                var tempUrl = object.url({minCol:1,maxCol:1,minRow:1,maxRow:1,withoutcallback:true});
+                loopFunc(seconds,function(){
+                    object.ajax({
+                        url:tempUrl,
+                        success:function(json){
+                            //Check the updated time of newest data
+                            var update = false;
+                            for(var t=0;t<cacheObj.time.length;t++){
+                                if(cacheObj.time[t] != json.feed.updated.$t){
+                                    update = true;
+                                    t = cacheObj.time.length;
+                                }
+                            }
+                            if(update){
+                                //Clear cache
+                                cacheObj = {url:[],json:[],time:[]};
                             }
                         }
-                        if(update){
-                            //Clear cache
-                            cacheObj = {url:[],json:[],time:[]};
-                        }
-                    }
+                    });
                 });
-            });
+            }
+
         }
 
         //Get URL of target page. 2nd argment can control update "setting.pager.page" or not.
@@ -312,7 +330,10 @@
         function loopFunc(sec,argFunc){
             var interval = sec * 1000;
             var dummy = setTimeout(function(){
-                argFunc();
+                if(setting.cache){
+                    argFunc();
+                    loopFunc(sec,argFunc);
+                }
             },interval);
         }
 
