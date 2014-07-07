@@ -1,4 +1,4 @@
-<link href="https://raw.github.com/mecrazy/generateGoogleJsonpUri/master/README.css" rel="stylesheet"></link>
+<link href="./master/README.css" rel="stylesheet"></link>
 
 generateGoogleJsonpUri
 ======================
@@ -8,7 +8,7 @@ generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. 
 
 ### $.genJsonpGDU("<Your-spreadsheet-key-here>")
 
-When you open your Google Spreadsheet, URL is like `https://docs.google.com/spreadsheets/d/[ Your spreadsheet key ]/edit#gid=0`. Please put your spreadsheet key following the syntax below.
+When you open your Google Spreadsheet, URL is like `https://docs.google.com/spreadsheets/d/[ Your spreadsheet key ]/edit#gid=0`. Please put your spreadsheet key into the syntax below.
 ```javascript
 var mySheet = $.genJsonpGDU("<Your-spreadsheet-key-here>");
 ```
