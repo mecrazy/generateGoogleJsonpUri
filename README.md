@@ -1,4 +1,4 @@
-<link href="https://raw.github.com/mecrazy/generateGoogleJsonpUri/master/README.css" rel="stylesheet"></link>
+<link href="http://raw.github.com/mecrazy/generateGoogleJsonpUri/master/README.css" rel="stylesheet"></link>
 
 generateGoogleJsonpUri
 ======================
