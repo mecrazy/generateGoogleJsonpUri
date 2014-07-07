@@ -1,4 +1,5 @@
-<link href="README.css" rel="stylesheet"></link>
+<link href="https://raw.github.com/mecrazy/generateGoogleJsonpUri/master/README.css" rel="stylesheet"></link>
+
 generateGoogleJsonpUri
 ======================
 generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. Tested on Chrome 35 and Internet Explorer 8.
