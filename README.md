@@ -30,7 +30,7 @@ mySheet.url({
   callback:"myCallback"//Callback function name (optional)
 });
 ```
-If you do not set "callback", default function name is "callback". If you do not want to set callback function name into get parameter, please use syntax like below.
+If you do not set "callback", default function name is "callback". If you do not want to set callback function name into URL, please use syntax like below.
 ```javascript
 mySheet.url({
   minRow:2,//Row number to start getting (optional)
