@@ -49,6 +49,26 @@ Arguments for this function are the same as "http://api.jquery.com/jQuery.ajax/"
 ```javascript
 var param = mySheet.get();
 ```
+Default parameters are like below.
+```javascript
+{
+  key:[Your-spreadsheet-key],
+  base1:'https://spreadsheets.google.com/feeds/cells/',//Do not change!
+  base2:'/od6/public/values?alt=json-in-script',//Do not change!
+  pager:{
+    enabled:false,
+    page:1,maxPage:1,prev:false,next:false,
+    recsPerPage:5,allRecs:1,
+    startRow:2,minCol:1,maxCol:1
+  },
+  cache:false,
+  cacheInterval:{
+    sec:0,min:20,hour:0
+  },
+  firstRequest:true
+};
+```
+
 If you want to know current page has previous page or next page, please use "get()" in _success function of ajax function_ and check parameters.
 ```javascript
 mySheet.ajax({
