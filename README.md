@@ -43,3 +43,29 @@ mySheet.ajax({
   }
 });
 ```
+Arguments for this function are the same as "http://api.jquery.com/jQuery.ajax/".
+
+### get
+```javascript
+var param = mySheet.get();
+```
+If you want to know current page has previous page or next page, please use "get()" in _success function of ajax function_ and check parameters.
+```javascript
+mySheet.ajax({
+  url:mySheet.page(1),
+  success:function(json){
+    console.log(json);
+    var param = mySheet.get();
+    if(param.pager.prev){
+      console.log('Current page has previous page.');
+    }else{
+      console.log('Current page does not have previous page.');
+    }
+    if(param.pager.next){
+      console.log('Current page has next page.');
+    }else{
+      console.log('Current page does not have next page.');
+    }
+  }
+});
+```
