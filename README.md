@@ -5,6 +5,13 @@ generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. 
 ## Warning
 When you use this plugin, please enable "__Publish to the web__" of your spreadsheet to get by this plugin. __If you enable this function, your Gmail address will be on public JSONP file__. If you want to keep your Gmail address secret, please get extra Google account only for public.
 
+## Ready to use
+Load the script after jQuery like below.
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/generateGoogleJsonpUri.min.js"></script>
+```
+
 ## Usage
 
 ### $.genJsonpGDU("<Your-spreadsheet-key-here>")
