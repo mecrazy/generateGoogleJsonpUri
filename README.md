@@ -142,3 +142,9 @@ mySheet.set({
 });
 ```
 This function can also change all parameters that you can get by `mySheet.get()`.
+
+======================
+### Developer
+[mecrazy](http://mecrazy.net "mecrazy")
+### Page about this plugin
+[mecrazy](http://mecrazy.net "mecrazy")
