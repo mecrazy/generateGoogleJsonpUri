@@ -124,7 +124,7 @@ mySheet.pager({
 
 JSON data will be converted to `arr2d[ row position ][ column position ]`.
 
-### set
+### set ( using cache )
 Basically this function is for cache.
 ```javascript
 mySheet.set({cache:true});
