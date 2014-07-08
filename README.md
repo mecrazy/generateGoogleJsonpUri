@@ -49,7 +49,7 @@ Arguments for this function are the same as "http://api.jquery.com/jQuery.ajax/"
 ```javascript
 var param = mySheet.get();
 ```
-Default parameters are like below.
+This function returns current parameters. Default parameters are like below.
 ```javascript
 {
   key:[Your-spreadsheet-key],
@@ -69,6 +69,7 @@ Default parameters are like below.
 };
 ```
 
+### get ( on ajax )
 If you want to know current page has previous page or next page, please use "get()" in _success function of ajax function_ and check parameters.
 ```javascript
 mySheet.ajax({
