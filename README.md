@@ -145,6 +145,8 @@ This function can also change all parameters that you can get by `mySheet.get()`
 
 ======================
 ### Developer
-[mecrazy](http://mecrazy.net "mecrazy")
+[http://mecrazy.net](http://mecrazy.net "mecrazy")
+[Google+](https://plus.google.com/+MecrazyNet/ "mecrazy")
+
 ### Page about this plugin
 [mecrazy](http://mecrazy.net "mecrazy")
