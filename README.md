@@ -123,3 +123,18 @@ mySheet.pager({
 `arr2d[1][2]` = D3.
 
 JSON data will be converted to `arr2d[ row position ][ column position ]`.
+
+### set
+Basically this function is for cache.
+```javascript
+mySheet.set({cache:true});
+```
+This argument switch to use cache for paging. It checks update date on JSONP every 20 minutes by default. If the date changed, it automatically clear cache. If you want to change the interval to check the date. You can use the syntax like below.
+```javascript
+mySheet.set({
+  cache:true,
+  cacheInterval:{
+    sec:0,min:50,hour:0
+  }
+});
+```
