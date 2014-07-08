@@ -2,6 +2,9 @@ generateGoogleJsonpUri
 ======================
 generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. Tested on Chrome 35 and Internet Explorer 8.
 
+## Warning
+Before using this plugin, please enable _Publish to the web_ of your spreadsheet. But if you enable that function, your Gmail address will be on public JSONP file. So I recommend you to get extra Google account only for public.
+
 ## Usage
 
 ### $.genJsonpGDU("<Your-spreadsheet-key-here>")
@@ -9,7 +12,6 @@ generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. 
 When you open your Google Spreadsheet on your browser, URL is like
 `https://docs.google.com/spreadsheets/d/[ Your spreadsheet key ]/edit#gid=0`<br>
 Please put your spreadsheet key into the syntax below.
-
 ```javascript
 var mySheet = $.genJsonpGDU("<Your-spreadsheet-key-here>");
 ```
