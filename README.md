@@ -1,3 +1,5 @@
+<link href="https://raw.github.com/mecrazy/generateGoogleJsonpUri/master/markdown.css" rel="stylesheet"></link>
+
 generateGoogleJsonpUri
 ======================
 generateGoogleJsonpUri is a jQuery plugin. Tested with jQuery 1.11.1 and 2.1.1. Tested on Chrome 35 and Internet Explorer 8.
@@ -25,6 +27,9 @@ mySheet.pager({
 });
 ```
 Please compare the syntax above and the table below. Following syntax means the range of the first page is the pink area, 2nd page is the green area. "B2:G2" is a first record. "B6:G6" is a fifth record.
+|A1|B1|C1|D1|E1|F1|G1|H1|
+|A2|B2|C2|D2|E2|F2|G2|H2|
+
 <table class="generateGoogleJsonpUri_table"><tbody>
 <tr><td>A1</td><td>B1</td><td>C1</td><td>D1</td><td>E1</td><td>F1</td><td>G1</td><td>H1</td></tr>
 <tr><td>A2</td><td bgcolor="#ff0000">B2</td><td class="generateGoogleJsonpUri_cells_range_01">C2</td><td class="generateGoogleJsonpUri_cells_range_01">D2</td><td class="generateGoogleJsonpUri_cells_range_01">E2</td><td class="generateGoogleJsonpUri_cells_range_01">F2</td><td class="generateGoogleJsonpUri_cells_range_01">G2</td><td>H2</td></tr>
