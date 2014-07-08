@@ -68,7 +68,7 @@ This function returns current parameters. Default parameters are like below.
     sec:0,min:20,hour:0
   },
   firstRequest:true
-};
+}
 ```
 
 ### get ( on ajax )
