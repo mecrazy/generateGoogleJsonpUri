@@ -20,6 +20,28 @@ Or also you can use the syntax below.
 var mySheet = $.genJsonpGDU({key:"<Your-spreadsheet-key-here>"});
 ```
 
+### url(object)
+```javascript
+mySheet.url({
+  minRow:1,//Row number to start getting (optional)
+  maxRow:2,//Row number to end getting (optional)
+  minCol:1,//Column number to start getting (optional)
+  maxCol:2,//Column number to end getting (optional)
+  callback:"myCallback"//Callback function name (optional)
+});
+```
+If you do not set "callback", default function name is "callback". If you do not want to set callback function name into get parameter, please use syntax like below.
+```javascript
+mySheet.url({
+  minRow:2,//Row number to start getting (optional)
+  maxRow:3,//Row number to end getting (optional)
+  minCol:2,//Column number to start getting (optional)
+  maxCol:4,//Column number to end getting (optional)
+  withoutcallback:true//Callback function name visible (optional)
+});
+```
+"withoutcallback" is _false_ by default. If you set it _true_, generated URL does not have callback parameter.
+
 ### pager(object)
 ```javascript
 mySheet.pager({
