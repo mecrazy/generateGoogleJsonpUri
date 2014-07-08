@@ -112,7 +112,6 @@ mySheet.pager({
   recsPerPage:5//Records on a page (optional)
 });
 ```
-
 `arr2d[0][0]` = B2,
 
 `arr2d[0][1]` = C2,
@@ -124,3 +123,5 @@ mySheet.pager({
 `arr2d[1][1]` = C3,
 
 `arr2d[1][2]` = D3.
+
+JSON data will be converted to arr2d[ row position ][ column position ].
