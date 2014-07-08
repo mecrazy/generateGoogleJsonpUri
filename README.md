@@ -124,4 +124,4 @@ mySheet.pager({
 
 `arr2d[1][2]` = D3.
 
-JSON data will be converted to arr2d[ row position ][ column position ].
+JSON data will be converted to `arr2d[ row position ][ column position ]`.
