@@ -27,6 +27,7 @@ mySheet.pager({
 });
 ```
 Please compare the syntax above and the table below. Following syntax means the range of the first page is the pink area, 2nd page is the green area. "B2:G2" is a first record. "B6:G6" is a fifth record. Please understand it if you develop paging action with this plugin.
+
 ![Range of the pager](https://raw.githubusercontent.com/mecrazy/generateGoogleJsonpUri/master/markdown/table.gif "Range of the pager")
 
 ### page(number)
@@ -111,9 +112,15 @@ mySheet.pager({
   recsPerPage:5//Records on a page (optional)
 });
 ```
+
 `arr2d[0][0]` = B2,
+
 `arr2d[0][1]` = C2,
+
 `arr2d[0][2]` = D2,
+
 `arr2d[1][0]` = B3,
+
 `arr2d[1][1]` = C3,
+
 `arr2d[1][2]` = D3.
