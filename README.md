@@ -17,7 +17,7 @@ var mySheet = $.genJsonpGDU("<Your-spreadsheet-key-here>");
 ```
 Or also you can use the syntax below.
 ```javascript
-var mySheet = $.genJsonpGDU({key:"__<Your-spreadsheet-key-here>__"});
+var mySheet = $.genJsonpGDU({key:"<Your-spreadsheet-key-here>"});
 ```
 
 ### pager(object)
