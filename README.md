@@ -59,6 +59,7 @@ Please compare the syntax above and the table below. Following syntax means the 
 ```javascript
 var pageUrl = mySheet.page(1);
 ```
+If you use this syntax, `mySheet.pager(object)` casting is required before executing this function.
 
 ### ajax(object)
 ```javascript
