@@ -138,3 +138,4 @@ mySheet.set({
   }
 });
 ```
+This function can also change all parameters that you can get by `mySheet.get()`.
