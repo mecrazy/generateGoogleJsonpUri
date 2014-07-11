@@ -181,4 +181,4 @@ This function can also change all parameters that you can get by `mySheet.get()`
 [Google+](https://plus.google.com/+MecrazyNet/ "mecrazy")
 
 ### Page about this plugin
-[mecrazy](http://mecrazy.net "mecrazy")
+English - [http://mecrazy.net/2014/07/07/get-cells-new-google-spreadsheet-jsonp/](http://mecrazy.net/2014/07/07/get-cells-new-google-spreadsheet-jsonp/)
