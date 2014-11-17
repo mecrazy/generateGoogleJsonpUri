@@ -38,7 +38,8 @@
         var setting = {
             key:spreadsheetKey,
             base1:'https://spreadsheets.google.com/feeds/cells/',
-            base2:'/od6/public/values?alt=json-in-script',
+            //base2:'/od6/public/values?alt=json-in-script',//Fixed to follow Google's syntax change
+            base2:'/1/public/basic?min-row=1&min-col=1&alt=json-in-script',
             pager:{
                 enabled:false,
                 page:1,maxPage:1,prev:false,next:false,
