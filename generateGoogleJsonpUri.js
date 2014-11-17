@@ -39,7 +39,7 @@
             key:spreadsheetKey,
             base1:'https://spreadsheets.google.com/feeds/cells/',
             //base2:'/od6/public/values?alt=json-in-script',//Fixed to follow Google's syntax change
-            base2:'/1/public/basic?min-row=1&min-col=1&alt=json-in-script',
+            base2:'/1/public/basic?alt=json-in-script',
             pager:{
                 enabled:false,
                 page:1,maxPage:1,prev:false,next:false,
@@ -165,9 +165,10 @@
                 }
                 if(execute){
                     for(var i=0;i<json.feed.entry.length;i++){
-                        var txt = json.feed.entry[i].gs$cell.$t;
-                        var col = Number(json.feed.entry[i].gs$cell.col);
-                        var row = Number(json.feed.entry[i].gs$cell.row);
+                        var txt = json.feed.entry[i].content.$t;
+                        var rowAndCol = cellNameToColAndRow(json.feed.entry[i].title.$t);
+                        var col = rowAndCol.col;
+                        var row = rowAndCol.row;
                         if(i === 0){ minRow = row; }
                         if(i === 0){ minCol = col; }
                         yPos = row - minRow;
@@ -337,6 +338,26 @@
                 }
             },interval);
         }
+
+		function cellNameToColAndRow(cellName){
+			var colStr = cellName.match(/[a-z]+/ig);
+			var colArr = new Array();
+			if(colStr.length > 1){
+				colArr = colStr.split('');
+			}else{
+				colArr.push(colStr);
+			}
+			var colNum = 0;
+			for(var i=(colArr.length - 1);i>=0;i--){
+				var buff = colArr[i] + "A";
+				colNum += (buff.charCodeAt(0) - 64) + (26 * i);
+			}
+			var rowStr = cellName.match(/[0-9]+/ig);
+			return {
+				col:colNum,
+				row:Number(rowStr)
+			};
+		}
 
         return object;
 
