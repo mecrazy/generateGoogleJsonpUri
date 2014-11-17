@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../generateGoogleJsonpUri.js"></script>
+<script type="text/javascript">
+$(function(){
+
+//It's my sample spreadsheet. Please change the key to yours.
+var mySheet = $.genJsonpGDU("1IG2QEOXehU01b6DoMQi19CvFpm2EZJOUM2y4lqXKduw");
+
+mySheet.pager({
+  startRow:2,//Row number to start getting (required)
+  minCol:2,//Column number to start getting (required)
+  maxCol:7,//Column number to end getting (required)
+  recsPerPage:5//Records on a page (optional)
+});
+
+mySheet.ajax({
+  url:mySheet.pageUrl(1),
+  success:function(json){
+  	console.log(json);
+    var arr2d = mySheet.jsonToArr(json);
+  	console.log(arr2d);
+  	var src = "";
+  	for(var i=0;i<arr2d.length;i++){
+  		src += "<tr>";
+  		for(var j=0;j<arr2d[i].length;j++){
+  			var cell = arr2d[i][j];
+  			if(cell == ""){ cell = "&nbsp;"; }
+	  		src += "<td>" + cell +"</td>";
+	  	}
+  		src += "</tr>";
+  	}
+  	$('#target tbody').empty().html(src);
+  }
+});
+
+});
+</script>
+<style type="text/css">
+#target{border-collapse:collapse;border-style:solid;border-width:1px 0px 0px 1px;}
+#target td{margin:0px;padding:3px;border-style:solid;border-width:0px 1px 1px 0px;}
+</style>
+</head>
+<body>
+<table id="target">
+	<tbody>
+	</tbody>
+</table>
+</body>
+</html>
