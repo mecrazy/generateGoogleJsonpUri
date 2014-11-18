@@ -7,7 +7,9 @@
 $(function(){
 
 //It's my sample spreadsheet. Please change the key to yours.
-var mySheet = $.genJsonpGDU("1IG2QEOXehU01b6DoMQi19CvFpm2EZJOUM2y4lqXKduw");
+var key = "1IG2QEOXehU01b6DoMQi19CvFpm2EZJOUM2y4lqXKduw";
+
+var mySheet = $.genJsonpGDU(key);
 
 mySheet.pager({
   startRow:2,//Row number to start getting (required)
@@ -36,17 +38,22 @@ mySheet.ajax({
   }
 });
 
+$('#database').attr('src','https://docs.google.com/spreadsheets/d/' + key + '/pubhtml?gid=0&single=true');
+
 });
 </script>
 <style type="text/css">
 #target{border-collapse:collapse;border-style:solid;border-width:1px 0px 0px 1px;}
 #target td{margin:0px;padding:3px;border-style:solid;border-width:0px 1px 1px 0px;}
+#database{display:block;margin:10px auto;padding:0px;width:90%;height:320px;}
 </style>
 </head>
 <body>
-<table id="target">
-	<tbody>
-	</tbody>
-</table>
+
+<table id="target"><tbody></tbody></table>
+
+<h3 style="text-align:center;">The spreadsheet below is the database of DOM above.</h3>
+<iframe id="database"></iframe>
+
 </body>
 </html>
